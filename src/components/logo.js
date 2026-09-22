@@ -15,27 +15,38 @@ export default (() => {
       this.shadow.innerHTML =
       /*html*/`
       <style>
+        *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+
+
         .nombre-logo{
           color: white;
           font-size: clamp(0.3rem, 1vw + 0.5rem, 1rem);
-          font-weight: bold;
+          font-weight: 700;
+        }
+
+        .imagen-logo{
+          padding: 10px;
+          background-color: #FE9C04;
+          border-radius: 50%;
         }
 
         .imagen-logo svg{
-          width: 15px;
-          height: 15px;
+          width: 20px;
+          height: 20px;
           fill: #0C0C2E;
-          background-color: #FE9C04;
-          border-radius: 50%;
-          padding: 10px;
           cursor: pointer;
         }
 
         .logo{
           display: flex;
           align-items: center;
-          gap: 1rem;
-          padding: 50px;
+          gap: 2rem;
+          padding: 30px 50px;
           
         }
 

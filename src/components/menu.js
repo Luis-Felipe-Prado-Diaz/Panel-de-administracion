@@ -20,16 +20,14 @@ export default (() => {
 
         .lateral-bar {
           position: fixed;
-          top: 60px;
+          top: 0px;
           right: 0;
           width: 200px;
           height:100vh;
           z-index: 100;
+          padding-top: 60px;  
           display: none;
           flex-direction: column;
-          padding-top: 2rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
           background-color: #0C0C2E; 
           box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
           transition: transform 0.5s ease;

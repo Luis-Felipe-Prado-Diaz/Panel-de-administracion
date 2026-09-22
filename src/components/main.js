@@ -21,15 +21,13 @@ export default (() => {
         padding: 0;
       }
     main{
-      position: relative;
       display: grid;
       grid-template-columns: 1fr 3fr;
-      width: 100vw;
-      height: calc(100vh - 60px);
-      padding: 15px 50px;
+      width: 100%;
+      height: calc(100vh - 12.8vh);
+      padding: 30px 50px;
       gap: 50px;
-      justify-content: center;
-      background-color: white;
+      background-color: #9E9ECF;
     }
 
     @media (max-width: 768px){

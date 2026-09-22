@@ -22,15 +22,12 @@ export default (() => {
         }
         
         header{
-          position: sticky;
-          top: 0;
-          z-index: 10;
           display: flex;
           justify-content: space-between;
           align-items: center;
           background-color: #0C0C2E;
-
-          height: 60px;
+          
+          height: 10vh;
           width: 100%;
           box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
