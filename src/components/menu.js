@@ -76,7 +76,7 @@ export default (() => {
         }
 
         .lateral-bar ul li a:hover{
-          color: #a1a1a1ff;
+          color: #FE9C04;
         }
         .menu-toggle {
             position: absolute;
