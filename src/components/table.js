@@ -5,11 +5,56 @@ export default (() => {
     constructor() {
       super()
       this.shadow = this.attachShadow({ mode: 'open' })
+      this.data = []
     }
 
     connectedCallback() {
+      this.loadData()
       this.render()
     }
+
+     loadData() {
+      this.data = [
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+  
+      ]
+      
+     }
 
     render() {
       this.shadow.innerHTML =
@@ -24,11 +69,15 @@ export default (() => {
       .table-container{
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       border-radius: 5px;
       gap: 20px;
       z-index: 2;
+      height: 80vh;
+      overflow-y: scroll;
+      }
+      .table-container::-webkit-scrollbar{
+        display: none;
       }
 
       .table-container .info-container{
@@ -117,6 +166,7 @@ export default (() => {
         flex-direction: column;
         justify-content: space-between;
         list-style: none;
+        line-height: 1.3rem;
         gap: 10px;
         width: 100%;
         padding: 10px;
@@ -141,16 +191,40 @@ export default (() => {
         <button class = "pagination-button">></button>
         </div>
       </div>
-      <div class = "list-container">
-        <ul>
-          <li><span class = "data">Nombre: </span></li>
-          <li><span class = "data">Email: </span></li>
-          <li><span class = "data">Fecha de creación: </span></li>
-          <li><span class = "data">Fecha de actualización: </span></li>
-        </ul>
-      </div>
     </div>
             `
+
+        const tableContainer = this.shadow.querySelector('.table-container');
+        const data = this.data;
+        data.forEach(item => {
+        const listContainer = document.createElement('div')
+        listContainer.classList.add('list-container');
+        const ul = document.createElement('ul');
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        const span = document.createElement('span');
+        span.classList.add('data');
+        a.appendChild(span);
+        a.textContent = `${span["Nombre:"]} ${item.nombre} - Email: ${item.email} - Fecha de creación: ${item.fecha_creacion} - Fecha de actualización: ${item.fecha_actualizacion}`
+
+        
+        
+
+        // a.innerHTML = /*html*/`
+        //   <span class = "data">Nombre:</span> ${item.nombre}<br>
+        //   <span class = "data">Email:</span> ${item.email}<br>
+        //   <span class = "data">Fecha de creación:</span> ${item.fecha_creacion}<br>
+        //   <span class = "data">Fecha de actualización:</span> ${item.fecha_actualizacion}
+        // `
+        listContainer.appendChild(ul);
+        ul.appendChild(li);
+        li.appendChild(a);
+        tableContainer.appendChild(listContainer); 
+          
+});
+
+
+
 
     }
 

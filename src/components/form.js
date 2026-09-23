@@ -5,10 +5,38 @@ export default (() => {
     constructor() {
       super()
       this.shadow = this.attachShadow({ mode: 'open' })
+      this.data = []
     }
 
     connectedCallback() {
+      this.loadData()
       this.render()
+    }
+
+    loadData() {
+      this.data = [
+        {
+          label: 'Nombre',
+          type: 'text',
+          name: 'nombre'
+        },
+        {
+          label: 'Email',
+          type: 'email',
+          name: 'email'
+        },
+        {
+          label: 'Fecha de creación',
+          type: 'date',
+          name: 'fecha_creacion'
+        },
+        {
+          label: 'Fecha de actualización',
+          type: 'date',
+          name: 'fecha_actualizacion'
+        }
+        
+      ]
     }
 
     render() {
@@ -106,7 +134,7 @@ export default (() => {
       form .campo-formulario .input-formulario  input{
         width: 100%;
         padding: 10px;
-        border: 2px solid #0C0C2E;
+        border: 2px solid #CBD5E1;
         border-radius: 5px;
         font-family: 'Poppins', sans-serif;
       }
@@ -129,26 +157,26 @@ export default (() => {
         </div>
       </div>
       <form action="">
-        <div class="campo-formulario">
-          <div class="label-formulario">
-            <label for="nombre">Nombre</label>
-          </div>
-          <div class="input-formulario">
-            <input type="text" id="nombre" name="nombre">
-          </div>
-        </div>
-        <div class="campo-formulario">
-          <div class="label-formulario">
-            <label for="email">Email</label>
-          </div>
-          <div class="input-formulario">
-            <input type="email" id="email" name="email">
-          </div>
-        </div>
+     
       </form>
     </div>
       
       `
+      const form = this.shadow.querySelector('form');
+      const data = this.data;
+      data.forEach(item => {
+        const campoFormulario = document.createElement('div');
+        campoFormulario.classList.add('campo-formulario');
+        campoFormulario.innerHTML = /*html*/`
+          <div class="label-formulario">
+            <label for="${item.id}">${item.label}</label>
+          </div>
+          <div class="input-formulario">
+            <input type="${item.type}" id="${item.id}" name="${item.id}">
+          </div>
+        `;
+        form.appendChild(campoFormulario);
+      });
 
     }
 
