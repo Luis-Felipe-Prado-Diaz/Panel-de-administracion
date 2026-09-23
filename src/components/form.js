@@ -21,6 +21,7 @@ export default (() => {
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       }
 
       .formulario .paginacion{
@@ -30,7 +31,6 @@ export default (() => {
         gap: 10px;
         width: 100%;
         border-bottom: 3px solid #FE9C04;
-
       }
 
       .formulario .paginacion .titulo-paginacion .pagina {
@@ -40,6 +40,12 @@ export default (() => {
         font-size: 1rem;
         font-weight: 700;
         cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .formulario .paginacion .titulo-paginacion .pagina:hover{
+        color: #0C0C2E;
+        transition: color 0.3s ease;
       }
 
       .formulario .paginacion .botones-paginacion{
@@ -58,21 +64,29 @@ export default (() => {
         background-color: #FE9C04;
         border: none;
         cursor: pointer;
+        transition: fill 0.3s ease;
+      }
+
+      .formulario .paginacion .botones-paginacion .boton-paginacion:hover{
+        fill: #0C0C2E;
+        transition: fill 0.3s ease;
       }
 
       /* imput y labels*/
 
       form {
-        background-color: white;
+        background-color: #FFFFFF;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+        column-gap: 20px;
         width: 100%;
         padding: 0px 10px;
         margin-top: 0px;
-        border: 2px solid #0C0C2E;
+        border: 3px solid #CBD5E1;
         border-top: none;
         min-height: 150px;
+        border-radius: 0 0 5px 5px ;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       }
 
       form .campo-formulario {
@@ -81,7 +95,6 @@ export default (() => {
         flex-direction: column;
         gap: 10px;
         padding: 20px 10px;
-        
       }
 
       form .campo-formulario .label-formulario label{

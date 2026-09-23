@@ -78,7 +78,7 @@ export default (() => {
         }
         .menu-toggle {
             position: absolute;
-            top: 15px;
+            top: 25px;
             right: 17px;
             z-index: 300;
             display: flex;

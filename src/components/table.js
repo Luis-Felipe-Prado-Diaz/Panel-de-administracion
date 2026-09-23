@@ -56,6 +56,11 @@ export default (() => {
         padding: 7px;
         fill: white;
         cursor: pointer;
+        transition: fill 0.3s ease;
+      }
+      .table-container .info-container .filter-container svg:hover{
+        fill: #0C0C2E;
+        transition: fill 0.3s ease;
       }
 
       .table-container .info-container .pagination-container{
@@ -84,6 +89,12 @@ export default (() => {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: color 0.3s ease;
+      }
+
+      .table-container .info-container .pagination-container .pagination-button:hover{
+        color: #0C0C2E;
+        transition: color 0.3s ease;
       }
 
       .table-container .list-container{
@@ -91,11 +102,13 @@ export default (() => {
       flex-direction: column;
       align-items: center;
       width: 100%;
-      min-height: 140px;
-      padding: 10px;
-      border-radius: 16px;
+      padding: 10px 0px;
+      min-height: 130px;
       overflow: hidden;
-      border: 3px solid #0C0C2E;
+      border: 3px solid #CBD5E1;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      background: white;
+
       }
 
       
@@ -104,14 +117,10 @@ export default (() => {
         flex-direction: column;
         justify-content: space-between;
         list-style: none;
-        gap: 5px;
+        gap: 10px;
         width: 100%;
         padding: 10px;
       }
-
-  
-
-
       .data{
         gap: 20px;
         font-weight: 700;

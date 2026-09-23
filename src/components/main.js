@@ -24,10 +24,10 @@ export default (() => {
       display: grid;
       grid-template-columns: 1fr 3fr;
       width: 100%;
-      height: calc(100vh - 12.8vh);
+      height: calc(100vh - 10vh);
       padding: 30px 50px;
       gap: 50px;
-      background-color: #9E9ECF;
+      background-color: #F8FAFC;
     }
 
     @media (max-width: 768px){
