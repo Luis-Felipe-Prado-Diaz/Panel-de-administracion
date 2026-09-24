@@ -60,7 +60,13 @@ export default (() => {
             width: 100%;
             border-bottom: 3px solid #FE9C04;
           }
-
+          .formulario .paginacion .titulo-paginacion{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+          }
           .formulario .paginacion .titulo-paginacion .pagina {
             background-color: #FE9C04;
             padding: 10px;
@@ -69,6 +75,9 @@ export default (() => {
             font-weight: 700;
             cursor: pointer;
             transition: color 0.3s ease;
+          }
+          .formulario .paginacion .titulo-paginacion .pagina.active{
+            background-color: hsl(35, 90%, 55%);
           }
 
           .formulario .paginacion .titulo-paginacion .pagina:hover{
@@ -116,14 +125,20 @@ export default (() => {
             border-radius: 0 0 5px 5px ;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
           }
-
+          
+        
           form .campo-formulario {
             width: 100%;
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 10px;
             padding: 20px 10px;
           }
+
+          form .campo-formulario.active {
+            display: flex;
+          }
+
 
           form .campo-formulario .label-formulario label{
             font-weight: 700;
@@ -140,52 +155,67 @@ export default (() => {
           }
         </style>
         
-          <div class="formulario box">
+          <div class="formulario">
             <div class="paginacion">
               <div class="titulo-paginacion">
-                <div class = "pagina"> 
-                <span>General</span>
+                <div class="pagina active" data-tab="general"> 
+                  <span>General</span>
+                </div>
+                <div class="pagina" data-tab="direccion"> 
+                  <span>Dirección</span>
                 </div>
               </div>
               <div class="botones-paginacion">
                 <button class="boton-paginacion"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>broom</title><path d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" /></svg></button>
-              
                 <button class="boton-paginacion"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>content-save</title><path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" /></svg></button>
               </div>
             </div>
             <form action="">
-              <div class="campo-formulario">
+              <div class="campo-formulario active" data-tab="general">
                 <div class="label-formulario">
-                  <label for="undefined">Nombre</label>
+                  <label for="nombre">Nombre</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="text" id="undefined" name="undefined">
+                  <input type="text" id="nombre" name="nombre">
                 </div>
-              </div><div class="campo-formulario">
+              </div><div class="campo-formulario active" data-tab="general">
                 <div class="label-formulario">
-                  <label for="undefined">Email</label>
+                  <label for="email">Email</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="email" id="undefined" name="undefined">
+                  <input type="email" id="email" name="email">
                 </div>
-              </div><div class="campo-formulario">
+              </div>
+
+              <div class="campo-formulario" data-tab="direccion">
                 <div class="label-formulario">
-                  <label for="undefined">Fecha de creación</label>
+                  <label for="direccion">Dirección</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="date" id="undefined" name="undefined">
+                  <input type="text" id="direccion" name="direccion">
                 </div>
-              </div><div class="campo-formulario">
+              </div><div class="campo-formulario" data-tab="direccion">
                 <div class="label-formulario">
-                  <label for="undefined">Fecha de actualización</label>
+                  <label for="ciudad">Ciudad</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="date" id="undefined" name="undefined">
+                  <input type="text" id="ciudad" name="ciudad">
                 </div>
               </div>
             </form>
           </div>
       `
+      this.shadow.querySelector('.formulario').addEventListener('click', (event) => {
+        if(event.target.closest('.pagina')){
+          const tab = event.target.closest('.pagina')
+
+          this.shadow.querySelector('.pagina.active').classList.remove('active')
+          tab.classList.add('active')
+
+          this.shadow.querySelectorAll('.campo-formulario.active').forEach(campo => campo.classList.remove('active'))
+          this.shadow.querySelectorAll(`.campo-formulario[data-tab="${tab.dataset.tab}"]`).forEach(campo => campo.classList.add('active'))
+        }
+      })
     }
 
   }
