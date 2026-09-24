@@ -25,7 +25,7 @@ export default (() => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #0C0C2E;
+          background-color: hsla(240, 59%, 11%, 1.00);
           
           height: 10vh;
           width: 100%;

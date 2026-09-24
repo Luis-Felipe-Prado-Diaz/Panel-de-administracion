@@ -14,34 +14,36 @@ export default (() => {
     render() {
       this.shadow.innerHTML =
       /*html*/`
-    <style>
+      <style>
         *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-    main{
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      width: 100%;
-      height: calc(100vh - 10vh);
-      padding: 30px 50px;
-      gap: 50px;
-      background-color: #F8FAFC;
-    }
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
 
-    @media (max-width: 768px){
-      main{
-        grid-template-columns: 1fr;
-        padding: 15px 20px 
-      }
-    }
+        main{
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          width: 100%;
+          height: 90vh;
+          padding: 1rem 2rem;
+          gap: 2rem;
+          background-color: #F8FAFC;
+        }
 
-    </style>
-    <main>
-      <slot></slot>
-    </main>
-      
+        @media (max-width: 768px){
+          main{
+            grid-template-columns: 1fr;
+            padding: 1rem 2rem; 
+          }
+        }
+        
+      </style>
+
+      <main>
+        <slot></slot>
+      </main>
+        
       `
 
     }
