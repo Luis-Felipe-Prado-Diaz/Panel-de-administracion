@@ -85,7 +85,7 @@ export default (() => {
             gap: 20px;
             background: transparent;
             width: 100%; 
-            border-bottom: 3px solid #FE9C04;
+            border-bottom: 4px solid #FE9C04;
             border-radius: 5px;
             z-index: 10;
           }
@@ -119,7 +119,8 @@ export default (() => {
             background-color: #0C0C2E;
             border-radius: 5px;
             padding: 5px;
-            
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
           } 
 
           .table-header .info-container .pagination-container .pagination-button{
@@ -137,6 +138,7 @@ export default (() => {
             justify-content: center;
             align-items: center;
             transition: color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
           }
 
           .table-header .info-container .pagination-container .pagination-button:hover{
@@ -149,22 +151,31 @@ export default (() => {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            max-height: 83vh;
+            max-height: 78vh;
             overflow: auto;
-            padding: 1rem 0.2rem;
+            padding: 1rem 0.5rem;
+            background-color: transparent;
+            box-shadow: none;
           }
+
+          @media (max-width: 768px){
+            .table-body{
+              max-height: 25vh;
+            }
+          }
+
 
           .table-body::-webkit-scrollbar{
             width: 6px;
           }
 
           .table-body::-webkit-scrollbar-thumb{
-            background-color: #0C0C2D;
+            background-color: #FE9C04;
             border-radius: 5px;
           }
 
           .table-body::-webkit-scrollbar-track{
-            background-color: #FE9C04;
+            background-color: #0C0C2D;
           }
 
           .table-body .list-container{
@@ -173,9 +184,16 @@ export default (() => {
             align-items: center;
             width: 100%;
             padding: 10px 0px;
-            border: 3px solid #CBD5E1;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow:-5px 5px 7px -1px #0C0C2D;
             background: white;
+            border-radius: 1rem;
+            border-bottom: 3px solid #FE9C04;
+            border-right: 3px solid #FE9C04;
+          }
+          .table-body .list-container:hover{
+            background-color: #ffd493ff;
+            transform: scale(1.02);
+            transition: background-color 0.3s ease, transform 0.3s ease;
           }
 
           .table-body .list-container ul{
@@ -188,12 +206,19 @@ export default (() => {
             width: 100%;
             padding: 10px;
           }
+          a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+          }
 
           a span{
             gap: 20px;
             font-weight: 700;
             color: #0a0a0a;
             padding: 5px;
+            font-family:'Poppins', sans-serif;
+            font-size: 14px;
           }
 
           a span::after{

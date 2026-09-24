@@ -73,15 +73,33 @@ export default (() => {
             color: white;
             font-size: 1rem;
             font-weight: 700;
+            font-family: 'Poppins', sans-serif;
             cursor: pointer;
             transition: color 0.3s ease;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: background-color 0.3s ease,transform 0.8s ease; 
           }
+          .formulario .paginacion .titulo-paginacion .pagina:hover{
+            background-color: #0C0C2E;
+            transform: scale(1.05);
+            transition: background-color 0.3s ease, transform 0.8s ease ;
+          }
+          .formulario .paginacion .titulo-paginacion .pagina:active{
+            transform: scale(1.01);
+            transition: background-color 0.3s ease, transform 0.8s ease;
+          }
+
+
           .formulario .paginacion .titulo-paginacion .pagina.active{
-            background-color: hsl(35, 90%, 55%);
+            background-color: #0C0C2E;
+            box-shadow: 0px -5px 15px 0px #002A4C;
+            transform: scale(1.05);
+            transition: background-color 0.3s ease, transform 0.5s ease;
           }
 
           .formulario .paginacion .titulo-paginacion .pagina:hover{
-            color: #0C0C2E;
+            color: white;
             transition: color 0.3s ease;
           }
 
@@ -107,23 +125,24 @@ export default (() => {
           .formulario .paginacion .botones-paginacion .boton-paginacion:hover{
             fill: #0C0C2E;
             transition: fill 0.3s ease;
+            transform: scale(1.05);
+            transition: fill 0.3s ease, transform 0.3s ease;
           }
 
           /* imput y labels*/
 
           form {
-            background-color: #FFFFFF;
+            background-color: #C8EBFF;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
             column-gap: 20px;
             width: 100%;
             padding: 0px 10px;
             margin-top: 0px;
-            border: 3px solid #CBD5E1;
             border-top: none;
             min-height: 150px;
             border-radius: 0 0 5px 5px ;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow:0px 10px 20px 0px #002A4C;
           }
           
         
@@ -139,6 +158,7 @@ export default (() => {
             display: flex;
           }
 
+          /*labels y inputs*/
 
           form .campo-formulario .label-formulario label{
             font-weight: 700;
@@ -149,10 +169,29 @@ export default (() => {
           form .campo-formulario .input-formulario  input{
             width: 100%;
             padding: 10px;
-            border: 2px solid #CBD5E1;
+            border: none;
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
+            box-shadow: -5px 5px 5px -5px #3a3a3a;
+            outline: none;
+            transition: all 0.3s ease;
           }
+          form .campo-formulario .input-formulario  input:hover{
+            transform: translateY(-3px);
+            box-shadow: 0px 5px 10px 0px #3a3a3a;
+            transition: all 0.3s ease;
+          }
+
+          form .campo-formulario .input-formulario  input:focus{
+            outline: none;
+            box-shadow: 0px 5px 10px 0px #3a3a3a;
+          }
+
+          form .campo-formulario .input-formulario  input::placeholder{
+            color: #7e7e7eff;
+            font-weight: 700;
+          }
+
         </style>
         
           <div class="formulario">
@@ -176,14 +215,14 @@ export default (() => {
                   <label for="nombre">Nombre</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="text" id="nombre" name="nombre">
+                  <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
                 </div>
               </div><div class="campo-formulario active" data-tab="general">
                 <div class="label-formulario">
                   <label for="email">Email</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="email" id="email" name="email">
+                  <input type="email" id="email" name="email" placeholder="Ingrese su email">
                 </div>
               </div>
 
@@ -192,14 +231,14 @@ export default (() => {
                   <label for="direccion">Dirección</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="text" id="direccion" name="direccion">
+                  <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección">
                 </div>
               </div><div class="campo-formulario" data-tab="direccion">
                 <div class="label-formulario">
                   <label for="ciudad">Ciudad</label>
                 </div>
                 <div class="input-formulario">
-                  <input type="text" id="ciudad" name="ciudad">
+                  <input type="text" id="ciudad" name="ciudad" placeholder="Ingrese su ciudad">
                 </div>
               </div>
             </form>

@@ -27,6 +27,8 @@ export default (() => {
           color: white;
           font-size: clamp(0.3rem, 1vw + 0.5rem, 1rem);
           font-weight: 700;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 1px;
         }
 
         .imagen-logo{
