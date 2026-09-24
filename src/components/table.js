@@ -76,9 +76,7 @@ export default (() => {
             z-index: 2;
           }
 
-          .table-container::-webkit-scrollbar{
-            display: none;
-          }
+          
 
           .table-header .info-container{
             display: flex;
@@ -115,7 +113,6 @@ export default (() => {
 
           .table-header .info-container .pagination-container{
             display: flex;
-            justify-content: space-between;
             align-items: center;
             gap: 10px;
             color: white;
@@ -155,6 +152,19 @@ export default (() => {
             max-height: 83vh;
             overflow: auto;
             padding: 1rem 0.2rem;
+          }
+
+          .table-body::-webkit-scrollbar{
+            width: 6px;
+          }
+
+          .table-body::-webkit-scrollbar-thumb{
+            background-color: #0C0C2D;
+            border-radius: 5px;
+          }
+
+          .table-body::-webkit-scrollbar-track{
+            background-color: #FE9C04;
           }
 
           .table-body .list-container{
