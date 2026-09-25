@@ -223,7 +223,6 @@ export default (() => {
 
       const tableBody = this.shadow.querySelector('.table-body');
       const data = this.data;
-
       data.forEach(item => {
         const listContainer = document.createElement('div')
         listContainer.classList.add('list-container');
