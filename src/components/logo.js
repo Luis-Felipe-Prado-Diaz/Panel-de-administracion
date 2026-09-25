@@ -33,7 +33,7 @@ export default (() => {
 
         .imagen-logo{
           padding: 10px;
-          background-color: #FE9C04;
+          background-color: #6B8AA7;
           border-radius: 50%;
         }
 

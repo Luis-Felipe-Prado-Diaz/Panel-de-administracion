@@ -28,7 +28,7 @@ export default (() => {
           padding-top: 60px;  
           display: none;
           flex-direction: column;
-          background-color: #0C0C2E; 
+          background-color: #384959; 
           box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
           transition: transform 0.5s ease;
         }
@@ -45,14 +45,13 @@ export default (() => {
           flex-direction: column;
           justify-content: center;
           align-items: start;
-          gap: 1rem;
           transition: all 0.8s ease;
         }
 
         .lateral-bar ul li:hover{
           transform: translateX(0.3rem);
-          transition: transform 0.5s ease;
-          background-color: #181855ff;
+          transition: all 0.5s ease;
+          background-color: #6B8AA7;
           border-radius: 5px;
         }
 
@@ -75,7 +74,7 @@ export default (() => {
         }
 
         .lateral-bar ul li a:hover{
-          color: #FE9C04;
+          color: rgba(209, 209, 209, 1)
         }
         
         .menu-toggle {
@@ -95,7 +94,7 @@ export default (() => {
             display: block;
             width: 40px;
             height: 4px;
-            background-color: #FE9C04;
+            background-color: #ffff;
             transition: all 0.3s ease;
             border-radius: 2px;
           }

@@ -58,7 +58,7 @@ export default (() => {
             align-items: flex-end;
             gap: 10px;
             width: 100%;
-            border-bottom: 3px solid #FE9C04;
+            border-bottom: 3px solid #0C0C2E;
           }
           .formulario .paginacion .titulo-paginacion{
             display: flex;
@@ -68,7 +68,7 @@ export default (() => {
             width: 100%;
           }
           .formulario .paginacion .titulo-paginacion .pagina {
-            background-color: #FE9C04;
+            background-color: #6B8AA7;
             padding: 10px;
             color: white;
             font-size: 1rem;
@@ -81,7 +81,7 @@ export default (() => {
             transition: background-color 0.3s ease,transform 0.8s ease; 
           }
           .formulario .paginacion .titulo-paginacion .pagina:hover{
-            background-color: #0C0C2E;
+            background-color: #384959;
             transform: scale(1.05);
             transition: background-color 0.3s ease, transform 0.8s ease ;
           }
@@ -93,7 +93,7 @@ export default (() => {
 
           .formulario .paginacion .titulo-paginacion .pagina.active{
             background-color: #0C0C2E;
-            box-shadow: 0px -5px 15px 0px #002A4C;
+            box-shadow: 0px -5px 10px 0px #002A4C;
             transform: scale(1.05);
             transition: background-color 0.3s ease, transform 0.5s ease;
           }
@@ -116,15 +116,16 @@ export default (() => {
             height: 40px;
             padding: 5px;
             fill: white;
-            background-color: #FE9C04;
+            background-color: #6B8AA7;
             border: none;
             cursor: pointer;
-            transition: fill 0.3s ease;
+            transition: all 0.3s ease;
           }
 
           .formulario .paginacion .botones-paginacion .boton-paginacion:hover{
-            fill: #0C0C2E;
-            transition: fill 0.3s ease;
+            background-color: #0C0C2E;
+            transform: scale(1.05);
+            transition: fill 0.3s ease, transform 0.3s ease;
             transform: scale(1.05);
             transition: fill 0.3s ease, transform 0.3s ease;
           }
@@ -241,6 +242,8 @@ export default (() => {
                   <input type="text" id="ciudad" name="ciudad" placeholder="Ingrese su ciudad">
                 </div>
               </div>
+
+              
             </form>
           </div>
       `

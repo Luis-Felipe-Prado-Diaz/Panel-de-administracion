@@ -52,6 +52,24 @@ export default (() => {
           fecha_creacion: '2022-01-01',
           fecha_actualizacion: '2022-01-01'
         },
+          {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
+        {
+          nombre: 'John Doe',
+          email: '[EMAIL_ADDRESS]',
+          fecha_creacion: '2022-01-01',
+          fecha_actualizacion: '2022-01-01'
+        },
 
       ]
 
@@ -85,7 +103,7 @@ export default (() => {
             gap: 20px;
             background: transparent;
             width: 100%; 
-            border-bottom: 4px solid #FE9C04;
+            border-bottom: 4px solid #0C0C2E;
             border-radius: 5px;
             z-index: 10;
           }
@@ -99,16 +117,17 @@ export default (() => {
           .table-header .info-container .filter-container svg{
             width: 40px;
             height: 40px;
-            background-color: #FE9C04;
+            background-color: #6B8AA7;
             padding: 7px;
             fill: white;
             cursor: pointer;
-            transition: fill 0.3s ease;
+            transition: all 0.3s ease;
           }
           
           .table-header .info-container .filter-container svg:hover{
-            fill: #0C0C2E;
-            transition: fill 0.3s ease;
+            transform: scale(1.05);
+            background-color: #0C0C2E;
+            transition: all 0.3s ease;
           }
 
           .table-header .info-container .pagination-container{
@@ -116,7 +135,7 @@ export default (() => {
             align-items: center;
             gap: 10px;
             color: white;
-            background-color: #0C0C2E;
+            background-color: #384959;
             border-radius: 5px;
             padding: 5px;
             font-family: 'Poppins', sans-serif;
@@ -129,7 +148,7 @@ export default (() => {
             color: white;
             font-size: 15px;
             font-weight: 700;
-            background-color: #FE9C04;
+            background-color: #6B8AA7;
             border-radius: 5px;
             fill: #ffffffff;
             border: none;
@@ -143,7 +162,8 @@ export default (() => {
 
           .table-header .info-container .pagination-container .pagination-button:hover{
             color: #0C0C2E;
-            transition: color 0.3s ease;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
           }
 
           .table-body{
@@ -151,11 +171,15 @@ export default (() => {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            max-height: 78vh;
+            max-height: 83vh;
             overflow: auto;
             padding: 1rem 0.5rem;
             background-color: transparent;
             box-shadow: none;
+            direction: rtl;
+            text-align: left;
+            scrollbar-behavior: smooth;
+            scroll-snap-type: y mandatory;
           }
 
           @media (max-width: 768px){
@@ -166,16 +190,16 @@ export default (() => {
 
 
           .table-body::-webkit-scrollbar{
-            width: 6px;
+            width: 5px;
           }
 
           .table-body::-webkit-scrollbar-thumb{
-            background-color: #FE9C04;
+            background-color: #384959;
             border-radius: 5px;
           }
 
           .table-body::-webkit-scrollbar-track{
-            background-color: #0C0C2D;
+            background-color: transparent;
           }
 
           .table-body .list-container{
@@ -187,12 +211,12 @@ export default (() => {
             box-shadow:-5px 5px 7px -1px #0C0C2D;
             background: white;
             border-radius: 1rem;
-            border-bottom: 3px solid #FE9C04;
-            border-right: 3px solid #FE9C04;
+            scroll-snap-align: center;
           }
           .table-body .list-container:hover{
-            background-color: #ffd493ff;
+            background-color: #C8EBFF;
             transform: scale(1.02);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0);
             transition: background-color 0.3s ease, transform 0.3s ease;
           }
 
