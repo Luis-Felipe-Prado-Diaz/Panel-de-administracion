@@ -28,7 +28,7 @@ export default (() => {
           height: 90vh;
           padding: 1rem 2rem;
           gap: 2rem;
-          background-color: #F8FAFC;
+          background-color: #ecf8ffff;
         }
 
         @media (max-width: 768px){

@@ -71,6 +71,7 @@ export default (() => {
           border-radius: 5px;
           box-sizing: border-box;
           cursor: pointer;
+          font-family: 'Poppins', sans-serif;
         }
 
         .lateral-bar ul li a:hover{
