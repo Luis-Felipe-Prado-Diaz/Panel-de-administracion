@@ -101,6 +101,10 @@
           color: #7e7e7eff;
           font-weight: 700;
         }
+        form .campo-formulario .input-formulario  input:-webkit-autofill, {
+          -webkit-box-shadow: 0 0 0 30px #C8EBFF inset !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
 
         form .campo-formulario input[type="submit"]{
           margin-top: 20px;
@@ -136,7 +140,7 @@
               <label for="email">Email</label>
             </div>
             <div class="input-formulario">
-              <input type="email" id="email" name="email">
+              <input type="email" id="email" name="email" autocomplete="email"  required>
             </div>
           </div>
           <div class="campo-formulario">
@@ -144,7 +148,7 @@
               <label for="password">Password</label>
             </div>
             <div class="input-formulario">
-              <input type="password" id="password" name="password">
+              <input type="password" id="password" name="password" autocomplete="current-password" required>
             </div>
           </div>
           <div class="campo-formulario">
