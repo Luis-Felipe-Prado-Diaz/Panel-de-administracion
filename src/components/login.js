@@ -15,7 +15,7 @@
     loadData() {
       this.data = [
         {
-          titulo: this.labelTitulo.titulo,
+          titulo: this.labelTitulo.titulo
         }
       ]
     }
@@ -167,12 +167,12 @@
 
       })  
 
-      const form =this.shadow.querySelector("form");
+      const form =this.shadow.querySelector("form")
 
-      form.addEventListener("submit",e =>{
-        e.preventDefault();
-        alert("estas ingresando al panel de administracion");
-      });
+      form.addEventListener("submit",event =>{
+        event.preventDefault()
+        alert("estas ingresando al panel de administracion")
+      })
 
     }
 
